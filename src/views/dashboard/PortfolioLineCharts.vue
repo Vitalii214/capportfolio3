@@ -49,7 +49,8 @@ const chartOptions = computed(() => {
       enabled: true,
     },
     grid: {
-      borderColor: `rgba(${hexToRgb(String(variableTheme['border-color']))},${variableTheme['border-opacity']})`,
+      // borderColor: `rgba(${hexToRgb(String(variableTheme['border-color']))},${variableTheme['border-opacity']})`,
+      borderColor: 'light-grey',
       strokeDashArray: 6,
       xaxis: {
         lines: {
@@ -68,20 +69,20 @@ const chartOptions = computed(() => {
         bottom: 5,
       },
     },
-    colors: [currentTheme.primary],
+    colors: ['#FF5733'],
     markers: {
       size: 6,
       offsetY: 4,
       offsetX: -2,
       strokeWidth: 3,
-      colors: ['transparent'],
-      strokeColors: 'transparent',
+      colors: ['#FF5733'],
+      strokeColors: '#FF5733',
       discrete: [
         {
           size: 5.5,
           seriesIndex: 0,
-          strokeColor: currentTheme.primary,
-          fillColor: currentTheme.surface,
+          strokeColor: '#FF5733',
+          fillColor: '#FF5733',
           dataPointIndex: series.value[0].data.length - 1,
         },
       ],

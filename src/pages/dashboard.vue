@@ -10,8 +10,10 @@ import AnalyticsUserTable from '@/views/dashboard/AnalyticsUserTable.vue'
 import AnalyticsWeeklyOverview from '@/views/dashboard/AnalyticsWeeklyOverview.vue'
 import CardStatisticsVertical from '@core/components/cards/CardStatisticsVertical.vue'
 import IndustryPieCharts from '@/views/dashboard/IndustryPieCharts.vue'
+import LiquidCash from '@/views/dashboard/LiquidCash.vue'
 import PortfolioLineCharts from '@/views/dashboard/PortfolioLineCharts.vue'
 import PortfolioDetailsTable from '@/views/dashboard/PortfolioDetailsTable.vue'
+import LiquidCashTable from '@/views/dashboard/LiquidCashTable.vue'
 import { VRow } from 'vuetify/lib/components/index.mjs'
 
 const totalProfit = {
@@ -32,13 +34,9 @@ const newProject = {
   subtitle: 'Yearly Project',
 }
 
-const navigationTab = ref('ITEM ONE')
-const navigationTab2 = ref('ITEM ONE')
+const navigationTab = ref('Portfolio')
 
 const tabItems = ['Portfolio', 'Trading desk']
-
-const tabContent =
-  'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards...'
 </script>
 
 <template>
@@ -112,16 +110,16 @@ const tabContent =
           <VWindowItem value="Trading desk">
             <VRow>
               <VCol
-                cols="6"
-                md="6"
+                cols="12"
+                md="12"
               >
-                <IndustryPieCharts></IndustryPieCharts>
+                <LiquidCash></LiquidCash>
               </VCol>
               <VCol
-                cols="6"
-                md="6"
+                cols="12"
+                md="12"
               >
-                <PortfolioLineCharts></PortfolioLineCharts>
+                <LiquidCashTable />
               </VCol>
             </VRow>
           </VWindowItem>
