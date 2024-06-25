@@ -47,10 +47,12 @@ const tabItems = ['Portfolio', 'Trading desk']
     >
       <h1 class="text-center pb-3">Portfolio Summary</h1>
       <v-divider></v-divider>
-      <h2 class="text-center pt-3">AE26781-Investment</h2>
+      <div class="d-flex align-center justify-center">
+        <h2 class="text-center pt-3">AE26781-Investment</h2>&nbsp;&nbsp;
+        <div class="align-center justify-center"><VBtn size="small 27"> Select Account</VBtn></div>
+      </div>
       <div class="d-flex justify-center align-center">
         <h3 class="text-center pt-3">$100,231</h3>
-        <VBtn size="small"> Select Account</VBtn>
       </div>
     </VCol>
     <VCol

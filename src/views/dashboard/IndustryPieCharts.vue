@@ -4,7 +4,7 @@ import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 const series = computed(() => {
-  return [574, 103, 206] // Example data for pie chart
+  return [20000, 10000, 15000, 43000] // Example data for pie chart
 })
 
 const chartOptions = computed(() => {
@@ -17,21 +17,21 @@ const chartOptions = computed(() => {
       toolbar: { show: false },
       type: 'pie', // Change chart type to pie
     },
-    tooltip: { enabled: false }, // Enable tooltips for pie chart
+    tooltip: { enabled: true }, // Enable tooltips for pie chart
     plotOptions: {
       pie: {
         dataLabels: {
           enabled: true,
           formatter: function (val) {
-            return val.toFixed(2) // Format data labels to two decimal places
+            return val.toFixed(0) // Format data labels to two decimal places
           },
         },
       },
     },
     grid: { show: false }, // Hide grid for pie chart
-    colors: [currentTheme.error, currentTheme.success, currentTheme.warning],
+    colors: [currentTheme.error, currentTheme.success, currentTheme.warning, currentTheme.primary],
     stroke: { show: false }, // No stroke needed for pie chart
-    labels: ['Cash', 'Equity invested', 'Other assets'], // Example labels for pie chart
+    labels: ['Finance', 'HLS', 'Retail', 'Energy'], // Example labels for pie chart
   }
 })
 </script>
@@ -39,12 +39,12 @@ const chartOptions = computed(() => {
 <template>
   <VCard title="Industry Pie Chart">
     <VCardText class="pt-10">
-      <VRow>
+      <VRow class="justify-center">
         <VueApexCharts
           type="pie"
           :options="chartOptions"
           :series="series"
-          :height="300"
+          :height="400"
         />
       </VRow>
     </VCardText>

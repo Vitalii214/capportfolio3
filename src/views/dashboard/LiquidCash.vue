@@ -1,6 +1,6 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { hexToRgb } from '@layouts/utils'
+import DropDownList from './DropDownList.vue';
 
 const vuetifyTheme = useTheme()
 const series = computed(() => {
@@ -42,6 +42,9 @@ const chartOptions = computed(() => {
       <div class="d-flex align-center pl-5">
         <h3 class="text-h3">Liquid Cash Available</h3>&nbsp;&nbsp;
         <h1 class="text-h1">$10,123</h1>
+      </div>
+      <div>
+        <DropDownList></DropDownList>
       </div>
     </VCardText>
   </VCard>

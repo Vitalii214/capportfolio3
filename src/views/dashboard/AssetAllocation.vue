@@ -17,20 +17,15 @@ const chartOptions = computed(() => {
       toolbar: { show: false },
       type: 'pie', // Change chart type to pie
     },
-    tooltip: { enabled: false }, // Enable tooltips for pie chart
+    tooltip: { enabled: true }, // Enable tooltips for pie chart
     plotOptions: {
       pie: {
         dataLabels: {
           enabled: true,
-          formatter: function (val) {
-            return val.toFixed(2); // Format data labels to two decimal places
-          },
         },
       },
     },
-    grid: { show: false }, // Hide grid for pie chart
     colors: [currentTheme.error, currentTheme.success, currentTheme.warning],
-    stroke: { show: false }, // No stroke needed for pie chart
     labels: ['Cash', 'Equity invested', 'Other assets'], // Example labels for pie chart
   }
 })
@@ -39,12 +34,12 @@ const chartOptions = computed(() => {
 <template>
   <VCard title="Asset Allocation">
     <VCardText class="pt-10">
-      <VRow>
+      <VRow class="justify-center">
         <VueApexCharts
           type="pie"
           :options="chartOptions"
           :series="series"
-          :height="300"
+          :height="400"
         />
       </VRow>
     </VCardText>
