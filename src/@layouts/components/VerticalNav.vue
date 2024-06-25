@@ -66,7 +66,7 @@ const handleNavScroll = evt => {
           />
 
           <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-            Materio
+            Cap Portfolio
           </h1>
         </RouterLink>
       </slot>

@@ -48,8 +48,29 @@ const tabItems = ['Portfolio', 'Trading desk']
       <h1 class="text-center pb-3">Portfolio Summary</h1>
       <v-divider></v-divider>
       <div class="d-flex align-center justify-center">
-        <h2 class="text-center pt-3">AE26781-Investment</h2>&nbsp;&nbsp;
-        <div class="align-center justify-center"><VBtn size="small 27"> Select Account</VBtn></div>
+        <h2 class="text-center pt-3">AE26781-Investment</h2>
+        &nbsp;&nbsp;
+        <div class="align-center justify-center">
+          <v-btn color="primary">
+            Select account
+            <VIcon
+              size="24"
+              icon="ri-arrow-down-s-line"
+            />
+            <v-menu activator="parent">
+              <v-list>
+                <v-list-item
+                >
+                  <v-list-item-title>Your account 1</v-list-item-title>
+                </v-list-item>
+                <v-list-item
+                >
+                  <v-list-item-title>Your account 2</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </v-btn>
+        </div>
       </div>
       <div class="d-flex justify-center align-center">
         <h3 class="text-center pt-3">$100,231</h3>
