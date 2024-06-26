@@ -13,6 +13,10 @@ export const routes = [
         component: () => import('@/pages/assetresearch.vue'),
       },
       {
+        path: 'accountreport',
+        component: () => import('@/pages/accountreport.vue'),
+      },
+      {
         path: 'account-settings',
         component: () => import('@/pages/account-settings.vue'),
       },

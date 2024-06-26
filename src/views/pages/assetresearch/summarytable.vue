@@ -104,7 +104,7 @@ const resolveUserStatusVariant = stat => {
   >
     <!-- Plan -->
     <template v-slot:item.summary2="{ item }">
-      <router-link :to="'/assetresearch'">
+      <router-link :to="'/accountreport'">
         <VBtn class="small">See details</VBtn>
       </router-link>
     </template>
