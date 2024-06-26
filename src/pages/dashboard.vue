@@ -59,12 +59,10 @@ const tabItems = ['Portfolio', 'Trading desk']
             />
             <v-menu activator="parent">
               <v-list>
-                <v-list-item
-                >
+                <v-list-item>
                   <v-list-item-title>Your account 1</v-list-item-title>
                 </v-list-item>
-                <v-list-item
-                >
+                <v-list-item>
                   <v-list-item-title>Your account 2</v-list-item-title>
                 </v-list-item>
               </v-list>
@@ -148,73 +146,6 @@ const tabItems = ['Portfolio', 'Trading desk']
           </VWindowItem>
         </VWindow>
       </VCard>
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsWeeklyOverview />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsTotalEarning />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <VRow class="match-height">
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <AnalyticsTotalProfitLineCharts />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <CardStatisticsVertical v-bind="totalProfit" />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <CardStatisticsVertical v-bind="newProject" />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <AnalyticsBarCharts />
-        </VCol>
-      </VRow>
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsSalesByCountries />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="8"
-    >
-      <AnalyticsDepositWithdraw />
-    </VCol>
-
-    <VCol cols="12">
-      <AnalyticsUserTable />
     </VCol>
   </VRow>
 </template>

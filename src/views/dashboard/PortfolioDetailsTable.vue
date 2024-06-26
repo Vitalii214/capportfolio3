@@ -160,7 +160,9 @@ const resolveUserStatusVariant = stat => {
     >
       <!-- Plan -->
       <template v-slot:item.details="{ item }">
-        <VBtn class="small">See details</VBtn>
+        <router-link :to="'/assetresearch'">
+          <VBtn class="small">See details</VBtn>
+        </router-link>
       </template>
       <template #bottom />
     </VDataTable>

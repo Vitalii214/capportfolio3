@@ -20,14 +20,16 @@
         <Last15DayChart></Last15DayChart>
       </template>
       <template v-slot:item.details="{ item }">
-        <VBtn class="small">See details</VBtn>
+        <router-link :to="'/assetresearch'">
+          <VBtn class="small">See details</VBtn>
+        </router-link>
       </template>
     </v-data-table>
   </v-card>
 </template>
 
 <script>
-import { VBtn } from 'vuetify/lib/components/index.mjs';
+import { VBtn } from 'vuetify/lib/components/index.mjs'
 import Last15DayChart from './Last15DayCharts.vue'
 export default {
   data() {
