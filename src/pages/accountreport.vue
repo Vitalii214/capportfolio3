@@ -51,12 +51,8 @@ const tabItems = ['Portfolio', 'Trading desk']
         >
           <div class="d-flex justify-end jutify-column">
             <h4>
-              <v-icon
-                color="teal-darken-2"
-                icon="mdi-email"
-                size="large"
-              ></v-icon
-              >Email the summary
+              <VIcon icon="ri-mail-line" />
+              Email the summary
             </h4>
           </div>
         </VCol>
@@ -98,7 +94,8 @@ const tabItems = ['Portfolio', 'Trading desk']
           class="mx-auto"
           height="700"
           width="100"
-        ><div>Pdf content</div></v-sheet>
+          ><div>Pdf content</div></v-sheet
+        >
         <div></div>
       </v-sheet>
     </VCol>

@@ -271,7 +271,7 @@ const tabItems = ['Portfolio', 'Trading desk']
               <h4>(Earning reports, 10-K reports, News articles, etc)</h4>
             </v-col>
             <v-col class="d-flex justify-end" cols="12" md="3">
-              <v-btn>upload a doc</v-btn><v-icon class="grey--text text--darken-2" size="64">mdi-file</v-icon>
+              <v-btn>upload a doc&nbsp;<VIcon icon="ri-file-line" /></v-btn>
             </v-col>
           </v-row>
       </div>

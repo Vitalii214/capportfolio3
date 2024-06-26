@@ -47,8 +47,8 @@ const tabItems = ['Portfolio', 'Trading desk']
     >
       <h1 class="text-center pb-3">Portfolio Summary</h1>
       <v-divider></v-divider>
-      <div class="d-flex align-center justify-center">
-        <h2 class="text-center pt-3">AE26781-Investment</h2>
+      <div class="d-flex pt-3 align-center justify-center">
+        <h2 class="text-center">AE26781-Investment</h2>
         &nbsp;&nbsp;
         <div class="align-center justify-center">
           <v-btn color="primary">

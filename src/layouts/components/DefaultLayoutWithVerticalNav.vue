@@ -12,26 +12,16 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
-        <!-- 👉 Vertical nav toggle in overlay mode -->
-        <IconBtn
-          class="ms-n3 d-lg-none"
-          @click="toggleVerticalOverlayNavActive(true)"
-        >
-          <VIcon icon="ri-menu-line" />
-        </IconBtn>
-
-        <!-- 👉 Search -->
         <div
           class="d-flex align-center cursor-pointer"
-          style="user-select: none;"
+          style="user-select: none"
         >
-          <!-- 👉 Search Trigger button -->
-          <IconBtn>
-            <VIcon icon="ri-search-line" />
-          </IconBtn>
-
-          <span class="d-none d-md-flex align-center text-disabled">
-            <span class="me-3">Assistant</span>
+          <span class="d-none d-md-flex align-center">
+            <v-btn
+              color="primary"
+              @click="toggleVerticalOverlayNavActive(true)"
+              ><span class="me-3">Open AI Assistant</span></v-btn
+            >
           </span>
         </div>
 
@@ -43,38 +33,8 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
       </div>
     </template>
 
-    <template #vertical-nav-header="{ toggleIsOverlayNavActive }">
-      <RouterLink
-        to="/"
-        class="app-logo app-title-wrapper"
-      >
-        <!-- eslint-disable vue/no-v-html -->
-
-
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-          Cap Portfolio
-        </h1>
-      </RouterLink>
-
-      <IconBtn
-        class="d-block d-lg-none"
-        @click="toggleIsOverlayNavActive(false)"
-      >
-        <VIcon icon="ri-close-line" />
-      </IconBtn>
-    </template>
-
-    <!-- <template #vertical-nav-content>
-      <NavItems />
-    </template> -->
-
     <!-- 👉 Pages -->
     <slot />
-
-    <!-- 👉 Footer -->
-    <template #footer>
-      <Footer />
-    </template>
   </VerticalNavLayout>
 </template>
 
