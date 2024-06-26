@@ -23,15 +23,10 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
         <!-- 👉 Search -->
         <div
           class="d-flex align-center cursor-pointer"
-          style="user-select: none;"
+          style="user-select: none"
         >
-          <!-- 👉 Search Trigger button -->
-          <IconBtn>
-            <VIcon icon="ri-search-line" />
-          </IconBtn>
-
           <span class="d-none d-md-flex align-center text-disabled">
-            <span class="me-3">Assistant</span>
+            <v-btn @click="toggleVerticalOverlayNavActive(true)">Open AI Assistant</v-btn>
           </span>
         </div>
 
@@ -43,18 +38,11 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
       </div>
     </template>
 
-    <template #vertical-nav-header="{ toggleIsOverlayNavActive }">
-      <RouterLink
-        to="/"
-        class="app-logo app-title-wrapper"
-      >
-        <!-- eslint-disable vue/no-v-html -->
-
-
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-          Cap Portfolio
-        </h1>
-      </RouterLink>
+    <template
+      #vertical-nav-header="{ toggleIsOverlayNavActive }"
+      style="width: 300px; background-color: red;"
+    >
+      <div><h1 class="font-weight-medium leading-normal text-xl text-uppercase">Portfolio Assistant</h1></div>
 
       <IconBtn
         class="d-block d-lg-none"
