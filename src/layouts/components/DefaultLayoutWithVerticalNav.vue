@@ -32,7 +32,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
         <UserProfile />
       </div>
     </template>
-
+    
     <!-- 👉 Pages -->
     <slot />
   </VerticalNavLayout>

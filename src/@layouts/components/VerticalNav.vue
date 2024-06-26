@@ -59,32 +59,14 @@ const handleNavScroll = evt => {
     <!-- 👉 Header -->
     <div class="nav-header">
       <slot name="nav-header">
-        <RouterLink
-          to="/"
-          class="app-logo app-title-wrapper"
-        >
+        <div class="d-flex flex-column">
           <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-        </RouterLink>
+          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
+          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
+          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
+        </div>
       </slot>
     </div>
-    <slot name="before-nav-items">
-      <div class="vertical-nav-items-shadow" />
-    </slot>
-    <slot
-      name="nav-items"
-      :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
-    >
-      <PerfectScrollbar
-        tag="ul"
-        class="nav-items"
-        :options="{ wheelPropagation: false }"
-        @ps-scroll-y="handleNavScroll"
-      >
-        <slot />
-      </PerfectScrollbar>
-    </slot>
-
-    <slot name="after-nav-items" />
   </Component>
 </template>
 

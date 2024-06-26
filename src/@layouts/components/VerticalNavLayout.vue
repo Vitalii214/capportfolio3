@@ -28,7 +28,7 @@ export default defineComponent({
       )
 
       // 👉 Navbar
-      const navbar = h('header', { class: ['layout-navbar ma-3'] }, [
+      const navbar = h('header', { class: ['layout-navbar ma-3 navbar-blur'] }, [
         h(
           'div',
           { class: 'navbar-content-container' },
@@ -66,7 +66,7 @@ export default defineComponent({
             route.meta.layoutWrapperClasses,
           ],
         },
-        [h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]), layoutOverlay],
+        [verticalNav, h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]), layoutOverlay],
       )
     }
   },
