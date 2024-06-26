@@ -1,5 +1,7 @@
 <script setup>
 import MartketSentiment from '@/views/pages/assetresearch/marketsentiment.vue'
+import CardCarousel from '@/views/pages/assetresearch/cardcarousel.vue'
+import SummaryTable from '@/views/pages/assetresearch/summarytable.vue'
 import { VBtn, VCard, VRow } from 'vuetify/lib/components/index.mjs'
 
 const totalProfit = {
@@ -231,13 +233,18 @@ const tabItems = ['Portfolio', 'Trading desk']
         </VCol>
       </div>
       <v-divider></v-divider>
-      <div class="d-flex pt-4">
+      <div class="d-flex pt-4 justify-space-between">
         <VCol
           cols="6"
           md="6"
-          ><div class="d-flex justify-center pa-5"><h1 class="text-center pb-10">Assistant Recommendation</h1></div>
-          <div class=" text-h3 d-flex justify-center pa-1 green--text text-success">Buy</div>
-          <div class=" text-h3 d-flex justify-center green--text text-success">76% confidence</div>
+          class="d-flex flex-column justify-space-between"
+          ><div class="d-flex justify-center pa-2"><h1 class="text-center pb-10">Assistant Recommendation</h1></div>
+          <div>
+            <div class="text-h3 d-flex justify-center pa-1 green--text text-success">Buy</div>
+            <div class="text-h3 d-flex justify-center green--text text-success">76% confidence</div>
+          </div>
+
+          <div class="text-right"><v-btn>See Why</v-btn></div>
         </VCol>
         <VCol
           cols="6"
@@ -250,6 +257,26 @@ const tabItems = ['Portfolio', 'Trading desk']
             <MartketSentiment></MartketSentiment
           ></v-row>
         </VCol>
+      </div>
+      <div class="d-flex pt-4 justify-space-between">
+        <CardCarousel />
+      </div>
+      <div class="d-flex pt-4 justify-space-between">
+        <div class="text-h4 pt-5">Existing reports and documents</div>
+      </div>
+      <div class="d-flex pt-4 justify-space-between">
+          <v-row>
+            <v-col cols="12" md="8">
+              <h4>Missing documents? Upload a new one</h4>
+              <h4>(Earning reports, 10-K reports, News articles, etc)</h4>
+            </v-col>
+            <v-col class="d-flex justify-end" cols="12" md="3">
+              <v-btn>upload a doc</v-btn><v-icon class="grey--text text--darken-2" size="64">mdi-file</v-icon>
+            </v-col>
+          </v-row>
+      </div>
+      <div class="d-flex pt-4 justify-space-between">
+        <SummaryTable/>
       </div>
     </VCol>
   </VRow>
