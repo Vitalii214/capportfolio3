@@ -59,25 +59,57 @@ const handleNavScroll = evt => {
   >
     <!-- 👉 Header -->
     <div class="nav-header">
-      <slot name="nav-header">
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Portfolio Assistantaaa</h1>
-      </slot>
+      <slot name="nav-header"> </slot>
     </div>
-    <slot name="before-nav-items">
-      <div class="vertical-nav-items-shadow" />
-    </slot>
+    <slot name="before-nav-items"> </slot>
     <slot
       name="nav-items"
       :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
     >
-      <PerfectScrollbar
-        tag="ul"
-        class="nav-items"
-        :options="{ wheelPropagation: false }"
-        @ps-scroll-y="handleNavScroll"
-      >
-        <slot />
-      </PerfectScrollbar>
+      <div class="d-flex flex-column">
+        <v-row>
+          <v-col
+            md="12"
+            cols="12"
+            ><v-card
+              class="ma-2 w-250"
+              flat
+              style="height: 300px"
+            ></v-card
+          ></v-col>
+        </v-row>
+        <v-row class="d-flex justify-center align-center">
+          <v-col
+            md="9"
+            cols="12"
+            class="ml-1"
+            ><v-text-field
+              clearable
+              label="Ask question"
+            ></v-text-field
+          ></v-col>
+          <v-col
+            md="2"
+            cols="12"
+            ><v-btn>Send</v-btn></v-col
+          >
+        </v-row>
+        <v-row
+          ><v-col
+            cols="12"
+            class="d-flex"
+            ><v-btn class="align-center justify-center">Initiate Transaction</v-btn></v-col
+          ><v-col
+            cols="12"
+            class="d-flex"
+            ><v-btn class="align-center justify-center">Summarize market sentiment around AAPL</v-btn></v-col
+          ><v-col
+            cols="12"
+            class="d-flex"
+            ><v-btn class="align-center justify-center">Give me a summary of APPL Q3 fnancial report</v-btn></v-col
+          ></v-row
+        >
+      </div>
     </slot>
 
     <slot name="after-nav-items" />

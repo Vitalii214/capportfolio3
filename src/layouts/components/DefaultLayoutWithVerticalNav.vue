@@ -38,18 +38,20 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
       </div>
     </template>
 
-    <template
-      #vertical-nav-header="{ toggleIsOverlayNavActive }"
-      style="width: 300px; background-color: red;"
-    >
-      <div><h1 class="font-weight-medium leading-normal text-xl text-uppercase">Portfolio Assistant</h1></div>
-
-      <IconBtn
-        class="d-block d-lg-none"
-        @click="toggleIsOverlayNavActive(false)"
-      >
-        <VIcon icon="ri-close-line" />
-      </IconBtn>
+    <template #vertical-nav-header="{ toggleIsOverlayNavActive }"
+      ><v-row>
+        <v-col
+          ><div class="d-flex justify-space-between align-center">
+            <div><h1 class="font-weight-medium leading-normal text-xl text-uppercase">Portfolio Assistant</h1></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <IconBtn
+              class="d-block d-lg-none justify-end"
+              @click="toggleIsOverlayNavActive(false)"
+            >
+              <VIcon icon="ri-close-line" />
+            </IconBtn></div></v-col
+        >
+      </v-row>
     </template>
 
     <!-- <template #vertical-nav-content>
