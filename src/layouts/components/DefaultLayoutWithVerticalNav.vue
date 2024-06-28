@@ -39,6 +39,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
               class="d-block d-lg-none justify-end"
               @click="toggleIsOverlayNavActive(false)"
             >
+            
               <VIcon icon="ri-close-line" />
             </IconBtn></div></v-col
         >
@@ -48,7 +49,6 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
     <template #vertical-nav-content>
       <NavItems />
     </template>
-
     <!-- 👉 Pages -->
     <slot />
   </VerticalNavLayout>
