@@ -198,17 +198,17 @@ const handleNavScroll = evt => {
             cols="12"
             md="12"
             class="d-flex"
-            ><v-btn class="align-center justify-center">Initiate Transaction</v-btn></v-col
+            ><v-btn block class="align-center justify-center">Initiate Transaction</v-btn></v-col
           ><v-col
             cols="12"
             md="12"
             class="d-flex"
-            ><v-btn class="align-center justify-center">Summarize market sentiment around AAPL</v-btn></v-col
+            ><v-btn block class="align-center justify-center">Summarize market sentiment around AAPL</v-btn></v-col
           ><v-col
             cols="12"
             md="12"
             class="d-flex"
-            ><v-btn class="align-center justify-center">Give me a summary of APPL Q3 fnancial report</v-btn></v-col
+            ><v-btn block class="align-center justify-center">Give me a summary of APPL Q3 fnancial report</v-btn></v-col
           ></v-row
         >
       </div>
