@@ -47,10 +47,11 @@ const handleNavScroll = evt => {
   <Component
     :is="props.tag"
     ref="refNav"
+    :width="500"
     class="layout-vertical-nav"
     :class="[
       {
-        visible: false,
+        visible: isOverlayNavActive,
         scrolled: isVerticalNavScrolled,
         'overlay-nav': mdAndDown,
       },
@@ -58,15 +59,162 @@ const handleNavScroll = evt => {
   >
     <!-- 👉 Header -->
     <div class="nav-header">
-      <slot name="nav-header">
-        <div class="d-flex flex-column">
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-        </div>
-      </slot>
+      <slot name="nav-header"> </slot>
     </div>
+    <slot name="before-nav-items"> </slot>
+    <slot
+      name="nav-items"
+      :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
+    >
+      <div class="d-flex flex-column">
+        <v-row>
+          <v-col
+            md="12"
+            cols="12"
+            ><v-card
+              class="ma-2 w-250"
+              flat
+              style="height: 300px; overflow-y: auto"
+            >
+              <v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="8"
+                  class="mt-2"
+                  ><v-alert
+                    border="end"
+                    density="compact"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                  >
+                    answer
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="start"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    ______sentiment is .
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="end"
+                    density="compact"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                  >
+                    answer
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="start"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    Buy 10 shares of apple
+                  </v-alert></v-col
+                ></v-row
+              ><v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="10"
+                >
+                  <v-alert
+                    border="end"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    <h3 class="text-center pt-3">AE26781-Investment</h3>
+                    <v-divider></v-divider>
+                    <span
+                      >I understand you want me to place an order for AAPL at current market place for 10 shares. Please
+                      confirm</span
+                    >
+                  </v-alert>
+                </v-col></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="6"
+                  class="d-flex align-center justify-center"
+                  ><router-link :to="'/assetresearch'">
+                    <v-btn color="success">Buy 10 shares</v-btn>
+                  </router-link> </v-col
+                ><v-col
+                  cols="12"
+                  md="6"
+                  class="d-flex align-center justify-center"
+                  ><v-btn color="error">Cancel</v-btn>
+                </v-col></v-row
+              >
+            </v-card></v-col
+          >
+        </v-row>
+        <v-row class="d-flex justify-center align-center">
+          <v-col
+            md="9"
+            cols="12"
+            class="ml-1"
+            ><v-text-field
+              clearable
+              label="Ask question"
+            ></v-text-field
+          ></v-col>
+          <v-col
+            md="2"
+            cols="12"
+            ><v-btn>Send</v-btn></v-col
+          >
+        </v-row>
+
+        <v-row class="ma-1">
+          <v-col
+            class="mt-3"
+            cols="12"
+            md="12"
+            >Sample questions</v-col
+          >
+          <v-col
+            cols="12"
+            md="12"
+            class="d-flex"
+            ><v-btn block class="align-center justify-center">Initiate Transaction</v-btn></v-col
+          ><v-col
+            cols="12"
+            md="12"
+            class="d-flex"
+            ><v-btn block class="align-center justify-center">Summarize market sentiment around AAPL</v-btn></v-col
+          ><v-col
+            cols="12"
+            md="12"
+            class="d-flex"
+            ><v-btn block class="align-center justify-center">Give me a summary of APPL Q3 fnancial report</v-btn></v-col
+          ></v-row
+        >
+      </div>
+    </slot>
+
+    <slot name="after-nav-items" />
   </Component>
 </template>
 
@@ -82,6 +230,9 @@ const handleNavScroll = evt => {
     line-height: 1.75rem;
     text-transform: uppercase;
   }
+}
+.nav-header {
+  background-color: red($color: #000000);
 }
 </style>
 
@@ -101,11 +252,12 @@ const handleNavScroll = evt => {
   inset-inline-start: 0;
   transition: inline-size 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   will-change: transform, inline-size;
-
+  width: 400px;
+  background-color: rgb(190, 115, 17);
   .nav-header {
     display: flex;
     align-items: center;
-
+    background-color: aliceblue;
     .header-action {
       cursor: pointer;
 
