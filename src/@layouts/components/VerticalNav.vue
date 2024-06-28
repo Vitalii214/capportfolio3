@@ -74,9 +74,101 @@ const handleNavScroll = evt => {
             ><v-card
               class="ma-2 w-250"
               flat
-              style="height: 300px"
-            ></v-card
-          ></v-col>
+              style="height: 300px; overflow-y: auto"
+            >
+              <v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="8"
+                  class="mt-2"
+                  ><v-alert
+                    border="end"
+                    density="compact"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                  >
+                    answer
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="start"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    ______sentiment is .
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="end"
+                    density="compact"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                  >
+                    answer
+                  </v-alert></v-col
+                ></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="8"
+                  ><v-alert
+                    border="start"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    Buy 10 shares of apple
+                  </v-alert></v-col
+                ></v-row
+              ><v-row justify="end"
+                ><v-col
+                  cols="12"
+                  md="10"
+                >
+                  <v-alert
+                    border="end"
+                    border-color="deep-purple accent-4"
+                    elevation="2"
+                    density="compact"
+                  >
+                    <h3 class="text-center pt-3">AE26781-Investment</h3>
+                    <v-divider></v-divider>
+                    <span
+                      >I understand you want me to place an order for AAPL at current market place for 10 shares. Please
+                      confirm</span
+                    >
+                  </v-alert>
+                </v-col></v-row
+              >
+              <v-row
+                ><v-col
+                  cols="12"
+                  md="6"
+                  class="d-flex align-center justify-center"
+                  ><router-link :to="'/assetresearch'">
+                    <v-btn color="success">Buy 10 shares</v-btn>
+                  </router-link> </v-col
+                ><v-col
+                  cols="12"
+                  md="6"
+                  class="d-flex align-center justify-center"
+                  ><v-btn color="error">Cancel</v-btn>
+                </v-col></v-row
+              >
+            </v-card></v-col
+          >
         </v-row>
         <v-row class="d-flex justify-center align-center">
           <v-col
@@ -94,17 +186,27 @@ const handleNavScroll = evt => {
             ><v-btn>Send</v-btn></v-col
           >
         </v-row>
-        <v-row
-          ><v-col
+
+        <v-row class="ma-1">
+          <v-col
+            class="mt-3"
             cols="12"
+            md="12"
+            >Sample questions</v-col
+          >
+          <v-col
+            cols="12"
+            md="12"
             class="d-flex"
             ><v-btn class="align-center justify-center">Initiate Transaction</v-btn></v-col
           ><v-col
             cols="12"
+            md="12"
             class="d-flex"
             ><v-btn class="align-center justify-center">Summarize market sentiment around AAPL</v-btn></v-col
           ><v-col
             cols="12"
+            md="12"
             class="d-flex"
             ><v-btn class="align-center justify-center">Give me a summary of APPL Q3 fnancial report</v-btn></v-col
           ></v-row

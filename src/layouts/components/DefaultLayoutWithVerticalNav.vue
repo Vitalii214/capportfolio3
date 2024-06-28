@@ -54,9 +54,9 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
       </v-row>
     </template>
 
-    <!-- <template #vertical-nav-content>
+    <template #vertical-nav-content>
       <NavItems />
-    </template> -->
+    </template>
 
     <!-- 👉 Pages -->
     <slot />
