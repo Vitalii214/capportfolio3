@@ -227,6 +227,14 @@ const handleNavScroll = evt => {
           ></v-row
         >
       </div>
+      <PerfectScrollbar
+        tag="ul"
+        class="nav-items"
+        :options="{ wheelPropagation: false }"
+        @ps-scroll-y="handleNavScroll"
+      >
+        <slot />
+      </PerfectScrollbar>
     </slot>
 
     <slot name="after-nav-items" />
