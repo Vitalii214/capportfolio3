@@ -47,10 +47,11 @@ const handleNavScroll = evt => {
   <Component
     :is="props.tag"
     ref="refNav"
+    :width="500"
     class="layout-vertical-nav"
     :class="[
       {
-        visible: false,
+        visible: isOverlayNavActive,
         scrolled: isVerticalNavScrolled,
         'overlay-nav': mdAndDown,
       },
@@ -59,14 +60,39 @@ const handleNavScroll = evt => {
     <!-- 👉 Header -->
     <div class="nav-header">
       <slot name="nav-header">
-        <div class="d-flex flex-column">
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">Cap Portfolio</h1>
-        </div>
+        <RouterLink
+          to="/"
+          class="app-logo app-title-wrapper"
+        >
+          <div
+            class="d-flex"
+            v-html="logo"
+          />
+
+          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
+            Cap Portfolio
+          </h1>
+        </RouterLink>
       </slot>
     </div>
+    <slot name="before-nav-items">
+      <div class="vertical-nav-items-shadow" />
+    </slot>
+    <slot
+      name="nav-items"
+      :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
+    >
+      <PerfectScrollbar
+        tag="ul"
+        class="nav-items"
+        :options="{ wheelPropagation: false }"
+        @ps-scroll-y="handleNavScroll"
+      >
+        <slot />
+      </PerfectScrollbar>
+    </slot>
+
+    <slot name="after-nav-items" />
   </Component>
 </template>
 
@@ -82,6 +108,9 @@ const handleNavScroll = evt => {
     line-height: 1.75rem;
     text-transform: uppercase;
   }
+}
+.nav-header {
+  background-color: red($color: #000000);
 }
 </style>
 
@@ -101,11 +130,12 @@ const handleNavScroll = evt => {
   inset-inline-start: 0;
   transition: inline-size 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   will-change: transform, inline-size;
-
+  width: 400px;
+  background-color: rgb(190, 115, 17);
   .nav-header {
     display: flex;
     align-items: center;
-
+    background-color: aliceblue;
     .header-action {
       cursor: pointer;
 

@@ -28,7 +28,7 @@ export default defineComponent({
       )
 
       // 👉 Navbar
-      const navbar = h('header', { class: ['layout-navbar ma-3 navbar-blur'] }, [
+      const navbar = h('header', { class: ['layout-navbar navbar-blur ma-8 mt-6'] }, [
         h(
           'div',
           { class: 'navbar-content-container' },
@@ -57,17 +57,31 @@ export default defineComponent({
         },
       })
 
-      return h(
-        'div',
-        {
-          class: [
-            'layout-wrapper layout-navbar-static layout-footer-static layout-content-width-fluid',
-            mdAndDown.value && 'layout-overlay-nav',
-            route.meta.layoutWrapperClasses,
-          ],
-        },
-        [verticalNav, h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]), layoutOverlay],
-      )
+      if (isLayoutOverlayVisible.value) {
+        return h(
+          'div',
+          {
+            class: [
+              'layout-wrapper layout-nav-type-vertical layout-navbar-static layout-footer-static layout-content-width-fluid',
+              mdAndDown.value && 'layout-overlay-nav',
+              route.meta.layoutWrapperClasses,
+            ],
+          },
+          [verticalNav, h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]), layoutOverlay],
+        )
+      } else {
+        return h(
+          'div',
+          {
+            class: [
+              'layout-wrapper  layout-navbar-static layout-footer-static layout-content-width-fluid',
+              mdAndDown.value && 'layout-overlay-nav',
+              route.meta.layoutWrapperClasses,
+            ],
+          },
+          [h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]), layoutOverlay],
+        )
+      }
     }
   },
 })
@@ -80,7 +94,6 @@ export default defineComponent({
 
 .layout-wrapper.layout-nav-type-vertical {
   // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
-  block-size: 100%;
 
   .layout-content-wrapper {
     display: flex;
@@ -90,9 +103,6 @@ export default defineComponent({
     transition: padding-inline-start 0.2s ease-in-out;
     will-change: padding-inline-start;
 
-    @media screen and (min-width: 1280px) {
-      padding-inline-start: variables.$layout-vertical-nav-width;
-    }
   }
 
   .layout-navbar {

@@ -16,12 +16,8 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
           class="d-flex align-center cursor-pointer"
           style="user-select: none"
         >
-          <span class="d-none d-md-flex align-center">
-            <v-btn
-              color="primary"
-              @click="toggleVerticalOverlayNavActive(true)"
-              ><span class="me-3">Open AI Assistant</span></v-btn
-            >
+          <span class="d-none d-md-flex align-center text-disabled">
+            <v-btn @click="toggleVerticalOverlayNavActive(true)">Open AI Assistant</v-btn>
           </span>
         </div>
 
@@ -32,7 +28,27 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
         <UserProfile />
       </div>
     </template>
-    
+
+    <template #vertical-nav-header="{ toggleIsOverlayNavActive }"
+      ><v-row>
+        <v-col
+          ><div class="d-flex justify-space-between align-center">
+            <div><h1 class="font-weight-medium leading-normal text-xl text-uppercase">Portfolio Assistant</h1></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <IconBtn
+              class="d-block d-lg-none justify-end"
+              @click="toggleIsOverlayNavActive(false)"
+            >
+              <VIcon icon="ri-close-line" />
+            </IconBtn></div></v-col
+        >
+      </v-row>
+    </template>
+
+    <template #vertical-nav-content>
+      <NavItems />
+    </template>
+
     <!-- 👉 Pages -->
     <slot />
   </VerticalNavLayout>
